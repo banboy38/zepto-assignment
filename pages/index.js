@@ -36,11 +36,24 @@ export default function Home() {
 
   // To handle the backspace on a chip
   function onBackspace(el){
+
+    const temp = document.getElementById(show[show.length-1])
+    console.log((temp))
+    console.log(show[show.length-1]);
+
     if((el.key === "Backspace" || el.key === "Delete") && input === ""){
-      let temp = show
-      temp.pop()
-      setShow(temp)
-      setinput(" ")
+
+      if(temp.classList.contains("border-blue-300")){
+        temp.classList.remove("border-blue-300")
+        temp.classList.add("border-blue-500")
+      }
+      else{
+        let temp1 = show
+        temp1.pop()
+        setShow(temp1)
+        setinput(" ")
+      }
+      
     }
     
   }
@@ -62,7 +75,7 @@ export default function Home() {
                   <div className="bg-gray-100 h-[3rem] px-1 border-b-blue-500 border-b-2 flex items-center justify-center">
 
                     {/* User Chip */}
-                    <div className=" rounded-full bg-white border-blue-300 border-2 text-sm flex items-center justify-between px-3 py-3 w-[11.8rem] h-[70%]">
+                    <div id={item} className=" rounded-full bg-white border-blue-300 border-2 text-sm flex items-center justify-between px-3 py-3 w-[11.8rem] h-[70%]">
                       
                       <div className="mb-1">{item}</div>
                       
