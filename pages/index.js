@@ -2,7 +2,7 @@ import { useState } from "react"
 
 export default function Home() {
 
-  const names = ["Prerna Verma", "Kajal Mahato", "Abhishek Purty", "Abhishek Oraon", "Pushker Prakash", "Ankit Dutta", "Sarthak Saraf"]
+  const names = ["Prerna Verma", "Anirban Aditya Halder","Kajal Mahato", "Abhishek Purty", "Abhishek Oraon", "Pushker Prakash", "Ankit Dutta", "Sarthak Saraf"]
   const [show, setShow] = useState([])
   const [input, setinput] = useState("")
 
@@ -70,7 +70,8 @@ export default function Home() {
           {/* Main Search Bar */}
           <form onSubmit={addText} className="w-full">
             <input id="inputText" type="search" list="myList" value={input} onChange={handleChange} className='bg-gray-100 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
-            {/* Filtering the options. If they're already there, it won't show on the dropdown. */}
+            
+            {/* Filtering the options. If they're already there as chips, it won't show on the dropdown. */}
             <datalist id="myList">
               {
                 names.filter((item)=>{
