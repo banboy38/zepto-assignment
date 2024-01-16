@@ -38,9 +38,6 @@ export default function Home() {
   function onBackspace(el){
 
     const temp = document.getElementById(show[show.length-1])
-    
-    // console.log((temp))
-    // console.log(show[show.length-1]);
 
     if( (el.key === "Backspace" || el.key === "Delete") && input === "" ){
 
