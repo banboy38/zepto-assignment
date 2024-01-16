@@ -6,6 +6,26 @@ body{
   margin: 7px;
 }
 
+::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px 20px 20px 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 /* <div className='bg-gray-100 h-[1.5rem] border-b-blue-500 border-b-2'></div> */
 
 /* input[type=text]{ */

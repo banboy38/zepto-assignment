@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <div className="flex justify-center items-center">   
 
-        <div className="flex justify-center items-center w-[80%]">
+        <div className="flex justify-center items-center w-[80%] overflow-y-auto">
 
           {/* The chip holder div where the names will be displayed (if they exist) */}
           {
@@ -81,7 +81,7 @@ export default function Home() {
           
           {/* Main Search Bar */}
           <form onSubmit={addText} className="w-full">
-            <input id="inputText" type="search" list="myList" value={input} onKeyDown={onBackspace} onChange={handleChange} className='bg-gray-100 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
+            <input id="inputText" type="search" list="myList" value={input} onKeyDown={onBackspace} onChange={handleChange} className='bg-gray-100 min-w-20 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
             
             {/* Filtering the options. If they're already there as chips, it won't show on the dropdown. */}
             <datalist id="myList">
