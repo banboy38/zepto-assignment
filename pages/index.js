@@ -34,6 +34,7 @@ export default function Home() {
 
   }
 
+  // To handle the backspace on a chip
   function onBackspace(el){
     if((el.key === "Backspace" || el.key === "Delete") && input === ""){
       let temp = show
