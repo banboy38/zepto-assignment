@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Home() {
 
@@ -33,6 +33,18 @@ export default function Home() {
     setinput(temp)
 
   }
+
+  function onBackspace(el){
+    if((el.key === "Backspace" || el.key === "Delete") && input === ""){
+      let temp = show
+      temp.pop()
+      setShow(temp)
+      setinput(" ")
+    }
+    
+  }
+
+  
   
   return (
     <div className="flex justify-center items-center">   
@@ -49,7 +61,7 @@ export default function Home() {
                   <div className="bg-gray-100 h-[3rem] px-1 border-b-blue-500 border-b-2 flex items-center justify-center">
 
                     {/* User Chip */}
-                    <div className=" rounded-full bg-white border-blue-300 border-2 text-sm flex items-center justify-between px-3 py-3 w-[10rem] h-[70%]">
+                    <div className=" rounded-full bg-white border-blue-300 border-2 text-sm flex items-center justify-between px-3 py-3 w-[11.8rem] h-[70%]">
                       
                       <div className="mb-1">{item}</div>
                       
@@ -69,7 +81,7 @@ export default function Home() {
           
           {/* Main Search Bar */}
           <form onSubmit={addText} className="w-full">
-            <input id="inputText" type="search" list="myList" value={input} onChange={handleChange} className='bg-gray-100 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
+            <input id="inputText" type="search" list="myList" value={input} onKeyDown={onBackspace} onChange={handleChange} className='bg-gray-100 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
             
             {/* Filtering the options. If they're already there as chips, it won't show on the dropdown. */}
             <datalist id="myList">
