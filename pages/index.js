@@ -21,9 +21,11 @@ export default function Home() {
   function addText(el){
     el.preventDefault()
 
-    let temp = show
-    temp.push(input)
-    setShow(temp)
+    if(input!==""){
+      let temp = show
+      temp.push(input)
+      setShow(temp)
+    }
 
     setinput("")
   }
@@ -31,11 +33,10 @@ export default function Home() {
   function handleChange(el){
 
     let temp = el.target.value
-    if(temp!==""){
-      setinput(temp)
-    }
+    setinput(temp)
 
   }
+  
   return (
     <div className="flex justify-center items-center">   
 
@@ -49,8 +50,8 @@ export default function Home() {
                   <div className="bg-gray-100 h-[3rem] px-1 border-b-blue-500 border-b-2 flex items-center justify-center">
 
                     {/* User Card */}
-                    <div onClick={handleClick} id={item} className=" rounded-full bg-white border-blue-300 border-2 text-sm flex items-center justify-center px-3 py-3 w-full h-[70%]">
-                      <span id={item} className="mb-1">{item}</span>
+                    <div onClick={handleClick} id={item} className=" rounded-full bg-white border-blue-300 border-2 text-sm flex items-center justify-center px-3 py-3 w-[10rem] h-[70%]">
+                      <div id={item} className="mb-1">{item}</div>
                     </div>
 
                   </div>
