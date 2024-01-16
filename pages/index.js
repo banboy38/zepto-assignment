@@ -20,8 +20,9 @@ export default function Home() {
 
   function addText(el){
     el.preventDefault()
-    const text = document.getElementById("inputText")
-    console.log(text.innerHTML)
+    let temp = show
+    temp.push(input)
+    setShow(temp)
   }
 
   return (
@@ -52,7 +53,7 @@ export default function Home() {
           
           {/* Main Search Bar */}
           <form onSubmit={addText} className="w-full">
-            <input id="inputText" type="text" value={input} onChange={(el)=>{setinput(el.)}} className='bg-gray-100 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
+            <input id="inputText" type="text" value={input} onChange={(el)=>{setinput(el.target.value)}} className='bg-gray-100 w-full h-[3rem] outline-none border-b-blue-500 border-b-2 px-1'></input>
           </form>
 
         </div>
