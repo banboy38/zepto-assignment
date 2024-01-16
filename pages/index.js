@@ -38,12 +38,13 @@ export default function Home() {
   function onBackspace(el){
 
     const temp = document.getElementById(show[show.length-1])
-    console.log((temp))
-    console.log(show[show.length-1]);
+    
+    // console.log((temp))
+    // console.log(show[show.length-1]);
 
-    if((el.key === "Backspace" || el.key === "Delete") && input === ""){
+    if( (el.key === "Backspace" || el.key === "Delete") && input === "" ){
 
-      if(temp.classList.contains("border-blue-300")){
+      if(temp && temp.classList.contains("border-blue-300")){
         temp.classList.remove("border-blue-300")
         temp.classList.add("border-blue-500")
       }
@@ -54,6 +55,12 @@ export default function Home() {
         setinput(" ")
       }
       
+    }
+    else{
+      if(temp && temp.classList.contains("border-blue-500")){
+        temp.classList.remove("border-blue-500")
+        temp.classList.add("border-blue-300")
+      }
     }
     
   }
